@@ -71,6 +71,7 @@
             android:drawablePadding="10dp"
             android:text="@{cityName}"
             android:textAlignment="center"
+            android:textAllCaps="true"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -88,8 +89,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
             app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/sun_animation" />
+            app:lottie_loop="true" />
 
         <TextView
             android:id="@+id/textView"

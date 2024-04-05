@@ -127,6 +127,22 @@ class MainActivity : AppCompatActivity() {
                             if (weatherModel.weather?.isNotEmpty() == true) {
                                 binding.todaysWeather.text = weatherModel.weather!![0].main
                                 binding.sunny.text = weatherModel.weather!![0].main
+
+                                when(weatherModel.weather!![0].main.lowercase()){
+                                    "clear", "sunny" ->{
+                                        binding.lottieAnimationView.setAnimation(R.raw.sun_animation)
+                                    }
+
+                                    "haze" ->{
+                                        binding.lottieAnimationView.setAnimation(R.raw.haze_animation)
+                                    }
+
+                                    "clouds" ->{
+                                        binding.lottieAnimationView.setAnimation(R.raw.clouds_animation)
+                                    }
+
+                                }
+                                binding.lottieAnimationView.playAnimation()
                             }
 
                             saveCityNameToPreferences(cityName)
@@ -137,7 +153,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<WeatherModel?>, t: Throwable) {
-                    TODO("Not yet implemented")
+
                 }
             })
 
